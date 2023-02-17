@@ -1,0 +1,149 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    background: url("items/bg.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.wrapper {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 500px;
+}
+
+.wrapper-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    animation-name: bcgr;
+    animation-duration: .1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+.block-img__img {
+    display: block;
+    height: 700px;
+    width: 900px;
+}
+
+.fire {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.fire img{
+    width: 100%;
+    height: 700px;
+}
+
+.block {
+    position: relative;
+}
+
+.pent11,
+.pent12 {
+    display: block;
+    top: 2%;
+    z-index: -22;
+    position: absolute;
+    animation-name: pent;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.pent11 {
+    left: 10%;
+}
+
+.pent12 {
+    right: 10%;
+    animation-direction: reverse;
+}
+
+.pent3 {
+    width: 100px;
+    position: absolute;
+    top: calc(50% - 900px);
+    left: calc(50% - 900px);
+    z-index: -22;
+    animation-name: pent;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.pent21,
+.pent22,
+.pent23 {
+    display: none;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: -50%;
+
+}
+
+.isaac {
+    position: absolute;
+    left: calc(50% - 200px /2);
+    top: calc(115% - 200px /2);
+    width: 200px;
+}
+
+.secret {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.block1.block--active .pent21 {
+    display: block;
+    left: calc(50% - 150px);
+}
+
+.block2.block--active .pent22 {
+    display: block;
+    left: calc(50% - 150px);
+}
+
+.block3.block--active .pent23 {
+    display: block;
+    left: calc(50% - 150px);
+}
+
+@keyframes bcgr {
+    0% {
+        background-color: #000;
+    }
+    100% {
+        background-color: #fff;
+    }
+}
+
+@keyframes pent {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
